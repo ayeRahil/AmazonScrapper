@@ -88,16 +88,5 @@ class ProductSpider(scrapy.Spider):
 
     def close(self, reason):
         start_time = self.crawler.stats.get_value('start_time')
-        #finish_time = self.crawler.stats.get_value('finish_time')
-        if self.count % 100 == 0:
-            finish_time = datetime.datetime.now()
-            print("Time taken for 100 url ", finish_time - start_time)
-
-        '''printcounter = 0
-
-        # Whatever a while loop is in Python
-        while (self.count<=1000):
-            if (printcounter == 100):
-                print("Time taken for 100 urls ", finish_time - start_time)
-                printcounter = 0
-            printcounter += 1'''
+        finish_time = self.crawler.stats.get_value('finish_time')
+        print("Time taken: ", finish_time - start_time)

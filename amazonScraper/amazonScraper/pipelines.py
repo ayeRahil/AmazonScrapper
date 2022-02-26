@@ -27,8 +27,8 @@ class AmazonscraperPipeline(object):
     def create_connection(self):
         self.conn = mysql.connector.connect(
             host= 'localhost',
-            user = os.environ['user'],
-            passwd = os.environ['passwd'],
+            user = os.environ.get['user'],
+            passwd = os.environ.get['passwd'],
             database = 'prod_details'
         )
         self.curr = self.conn.cursor()
